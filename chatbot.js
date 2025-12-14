@@ -27,14 +27,14 @@ document.addEventListener("DOMContentLoaded", () => {
             const msg = input.value.toLowerCase();
             input.value = "";
 
-            chatBody.innerHTML += `<div><b>You:</b> ${msg}</div>`;
+            chatBody.innerHTML += `<div><b>you:</b> ${msg}</div>`;
 
             let reply = "Please explore my portfolio sections above.";
             for (let key in knowledge) {
                 if (msg.includes(key)) reply = knowledge[key];
             }
 
-            chatBody.innerHTML += `<div><b>Bot:</b> ${reply}</div>`;
+            chatBody.innerHTML += `<div><b>bot:</b> ${reply}</div>`;
             chatBody.scrollTop = chatBody.scrollHeight;
         }
     });
