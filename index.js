@@ -41,3 +41,8 @@ const observer = new IntersectionObserver(entries => {
     });
 }, { threshold: 0.2 });
 reveals.forEach(el => observer.observe(el));
+
+// Always start from top on refresh
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+};

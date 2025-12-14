@@ -185,3 +185,82 @@ p {
     opacity: 1;
     transform: translateY(0);
 }
+
+
+/* =========================
+   CHATBOT COLLAPSIBLE
+   ========================= */
+
+.chatbot {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    z-index: 9998;
+}
+
+/* TOGGLE BUTTON */
+.chat-toggle {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.12);
+}
+
+/* CHAT WINDOW */
+.chat-window {
+    width: 280px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 20px 40px rgba(0,0,0,.12);
+    overflow: hidden;
+    display: none;
+}
+
+/* HEADER */
+.chat-header {
+    padding: 10px 12px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+}
+
+#chatClose {
+    cursor: pointer;
+    opacity: .6;
+}
+
+/* BODY */
+.chat-body {
+    height: 160px;
+    padding: 10px;
+    font-size: 13px;
+    overflow-y: auto;
+}
+
+.chatbot input {
+    width: 100%;
+    border: none;
+    border-top: 1px solid var(--border);
+    padding: 8px 10px;
+    outline: none;
+}
+
+/* STATE */
+.chatbot.minimized .chat-window {
+    display: none;
+}
+
+.chatbot.expanded .chat-window {
+    display: block;
+}
+
+.chatbot.expanded .chat-toggle {
+    display: none;
+}
+

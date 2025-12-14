@@ -115,6 +115,23 @@
     </div>
 </section>
 
-    <script src="index.js"></script><
+<div class="chatbot minimized" id="chatbot">
+    <button class="chat-toggle" id="chatToggle">💬</button>
+
+    <div class="chat-window">
+        <div class="chat-header">
+            Ask Me
+            <span id="chatClose">✕</span>
+        </div>
+
+        <div class="chat-body" id="chatBody"></div>
+        <input type="text" id="chatInput" placeholder="Ask about my skills..." />
+    </div>
+</div>
+
+<!-- SCRIPT -->
+
+    <script src="index.js"></script>
+    <script src="chatbot.js"></script>
 </body>
 </html>
