@@ -47,8 +47,6 @@ The website is built with simplicity and clarity in mind, avoiding unnecessary a
 - **GitHub Pages** – Deployment
 
 ## 📁 Project Structure
-
-.
 ├── index.html  
 ├── style.css  
 ├── script.js  
