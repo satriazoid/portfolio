@@ -1,3 +1,22 @@
+// Fix GitHub Pages scroll restoration
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
+// Force scroll to top AFTER page really visible
+window.addEventListener('pageshow', function (event) {
+    if (event.persisted) {
+        window.scrollTo(0, 0);
+    }
+});
+
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        window.scrollTo(0, 0);
+    }, 10);
+});
+
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const text = "Hello, I'm Jejo";
@@ -41,8 +60,3 @@ const observer = new IntersectionObserver(entries => {
     });
 }, { threshold: 0.2 });
 reveals.forEach(el => observer.observe(el));
-
-// Always start from top on refresh
-window.onbeforeunload = function () {
-    window.scrollTo(0, 0);
-};
