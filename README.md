@@ -48,13 +48,15 @@ The website is built with simplicity and clarity in mind, avoiding unnecessary a
 
 ## 📁 Project Structure
 
-├── index.html
-├── style.css
-├── script.js
-├── chatbot.js
-├── README.md
-└── assets/
-└── social/
-├── instagram.png
-├── linkedin.png
-└── github.png
+.
+├── index.html  
+├── style.css  
+├── script.js  
+├── chatbot.js  
+├── README.md  
+└── assets/  
+    └── social/  
+        ├── instagram.png  
+        ├── linkedin.png  
+        └── github.png  
+
