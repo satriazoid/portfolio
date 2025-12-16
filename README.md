@@ -59,4 +59,3 @@ The website is built with simplicity and clarity in mind, avoiding unnecessary a
         ├── instagram.png  
         ├── linkend.png  
         └── threads.png  
-
