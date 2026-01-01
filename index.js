@@ -19,28 +19,65 @@ window.addEventListener('load', () => {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    const text = "Hello, I'm Jejo";
-    const subtitleText = "Data Scientist • Frontend Developer • UI Designer • Trader • Tech Enthusiast";
+  const textTarget = document.getElementById("hello-typing");
+  const subtitle = document.getElementById("subtitle");
 
-    const typingEl = document.getElementById("typing");
-    const subtitleEl = document.getElementById("subtitle");
+  if (!textTarget || !subtitle) {
+    console.error("Element for typing animation not found.");
+    return;
+  }
 
-    let index = 0;
-    const speed = 90;
+  const words = [
+    "Hello",
+    "こんにちは", // Jepang
+    "Hola",       // Spanyol
+    "Bonjour",    // Prancis
+    "안녕하세요"  // Korea
+  ];
 
-    function typeEffect() {
-        if (index < text.length) {
-            typingEl.textContent += text.charAt(index);
-            index++;
-            setTimeout(typeEffect, speed);
-        } else {
-            subtitleEl.textContent = subtitleText;
-            subtitleEl.style.opacity = 1;
-        }
+  let wordIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  const typingSpeed = 120;
+  const deletingSpeed = 60;
+  const pause = 800;
+
+  subtitle.style.opacity = 0; // jadi muncul setelah typing selesai
+
+  function typeLoop() {
+    const word = words[wordIndex];
+
+    if (!isDeleting && charIndex < word.length) {
+      textTarget.textContent = word.substring(0, charIndex + 1);
+      charIndex++;
+      setTimeout(typeLoop, typingSpeed);
+
+    } else if (isDeleting && charIndex > 0) {
+      textTarget.textContent = word.substring(0, charIndex - 1);
+      charIndex--;
+      setTimeout(typeLoop, deletingSpeed);
+
+    } else {
+      if (!isDeleting) {
+        isDeleting = true;
+        setTimeout(typeLoop, pause);
+      } else {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        setTimeout(typeLoop, typingSpeed);
+      }
     }
 
-    typeEffect();
+    // jika sudah loop dan sampai bahasa terakhir → tampilkan subtitle dan hentikan loop
+    if (wordIndex === words.length - 1 && charIndex === 0 && isDeleting) {
+      subtitle.style.opacity = 1;
+      return; // stop animasi
+    }
+  }
+
+  typeLoop();
 });
+
 
 
 
