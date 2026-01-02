@@ -143,22 +143,34 @@ section {
   }
 }
 
+.nav-logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+}
+
+/* Styling Logo */
+.nav-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
 
 /* =========================
    DESKTOP MODE
 ========================= */
 @media (min-width: 769px) {
+    
 
   /* 👇 BRAND TETAP DI KIRI */
-  .brand-name {
-        position: absolute;
-        left: 24px;
-  }
+    .brand-name {
+        font-size: 1.2rem;
+        color: #fff; /* Sesuaikan dengan tema navbar Anda */
+    }
 
-  /* 👇 MENU BERADA DI TENGAH */
-  .nav-container {
-        justify-content: center;
-  }
+
 
   .nav-links {
         display: flex !important;
