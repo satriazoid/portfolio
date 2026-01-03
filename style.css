@@ -47,7 +47,6 @@ section {
     text-align: left;
 }
 
-
 /* =========================
    NAVBAR BASE
 ========================= */
@@ -166,7 +165,7 @@ section {
 
   /* 👇 BRAND TETAP DI KIRI */
     .brand-name {
-        font-size: 1.2rem;
+        font-size: 1 rem;
         color: #fff; /* Sesuaikan dengan tema navbar Anda */
     }
 
